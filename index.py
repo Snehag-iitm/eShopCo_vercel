@@ -3,17 +3,17 @@ import numpy as np
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
-# Load your JSON dataset
+# Load the dataset
 with open("q-vercel-latency.json", "r") as f:
     data = json.load(f)
 
 app = FastAPI()
 
-# Enable CORS
+# ✅ Enable CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_methods=["POST", "GET", "OPTIONS"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
